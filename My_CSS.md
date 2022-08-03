@@ -178,3 +178,72 @@ box-sizing
   2. absolute
   3. fixed
   4. sticky
+
+
+
+## layout
+
+### float
+
+옛날에 생긴 위치를 옮기기 위한 키워드
+- float설정한 개채는 맨 앞으로 옮겨져서 부모 박스의 특정 위치로 이동한다.
+- 이제는 잘 안쓰니 보고 읽는 연습을 하자
+
+### flex
+내용물이 그 크기만큼만 공간을 차지하면서 순서대로 배치됨
+
+- 행과 열을 이용해서 내가 원하는 대로 배치할 수 있다.
+- 가로 main axis와 세로 cross axis 를 이용해서 가로세로 위치를 이동한다.
+  - 매우 중요하다.
+- flex container(부모 요소) 와 flex item(자식 요소) 로 이루어져 있다.
+- inline flex도 존재한다.
+
+```
+Flex를 사용하는 이유
+
+예전에는 float와 position으로 일일히 하나씩 처리해야 했다.
+이제는 flex container에다가 설정을 해서 flex item들을 연관해서 
+정렬하거나, 공간을 나누거나, 배치하는 것을 쉽게 할 수 있다.
+```
+flex 속성
+
+main, cross 축을 확실히 이해하자!!!!
+- 배치 설정
+  - flex-direction
+    - main axis의 방향 설정
+    
+    - 역방향의 경우, 시각적인 순서와 코딩 적용 순서가 다르니 주의할것!
+  - flex-wrap
+    - 아이템이 컨테이너를 벗어나는 경우, 해당 영역 내에 배치되도록 설정
+      - wrap : 넘치면 그 다음 줄로 배치(아래로 내려감)
+      - nowrap(기본값) : 한 줄에 배치
+      - wrap reverse : 넘치면 그 앞 줄로 배치(위로 올라감)
+    - 아이템이 컨테이너 바깥으로 벗어나는것을 방지
+
+- 정렬 설정
+  - justify-content : main축을 기준으로 정렬
+  - main axis를 기준으로 공간을 배분
+    - flex-start : 축의 시작점으로 정렬
+    - flex-end : 축의 끝점으로 정렬
+    - center : 가운데 정렬
+    - space-between : 요소들 사이에 공백을 균일하게 해서 줄을 모두 사용해서 정렬(앞 끝점과 뒤 끝점에 공백 없음)
+    - space-around : 요소들 양 옆에 공백을 균일하게 분배해서 줄을 모두 사용해서 정렬(앞 끝점과 뒤 끝점에 공백 있음)
+    - space-evenly : 전체 영역에서 공백의 크기를 유지하면서 정렬(요소의 크기와 상관없이 공백의 크기가 중요)(앞 끝점과 뒤 끝점에 공백 있음)
+  - align-items : cross 축을 기준으로 정렬
+    - stretch : cross축을 모두 사용하도록 아이템들을 늘려서 채움
+    - flex-start : 축의 시작점을 기준으로 정렬
+    - flex-end : 축의 끝점을 기준으로 정렬
+    - center : 가운데 정렬
+    - baseline : 텍스트 바닥선을 기준으로 정렬
+  
+- 기타
+  - flex-grow : 남은 영역을 아이템에 재분배
+  - order : 배치 순서를 직접 지정(코드 순서와 다르게 배치하고 싶을 때)
+
+## Bootstrap
+
+다른 개발자가 만든 대표적인 스타일 시트가 바로 부트스트랩   
+
+bootstrap grid system
+- 12개의 column
+- 6개의 breakpoint
